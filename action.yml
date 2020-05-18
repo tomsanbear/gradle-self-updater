@@ -1,0 +1,13 @@
+# action.yml
+name: 'Gradle Self Updater'
+description: 'Self updates the local gradle wrapper'
+inputs:
+  max-version: 
+    description: 'Max version to use, defaults to latest otherwise'
+    required: false
+    default: 'latest'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.max-version }}
